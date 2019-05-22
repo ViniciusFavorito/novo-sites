@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-import Bootstrap from 'vue-cli-plugin-bootstrap'
+import store from './store/index'
+import firebase from 'firebase'
+import { firebaseConfig } from './../credentials'
 
-Vue.use(Bootstrap)
+firebase.initializeApp(firebaseConfig)
 
 Vue.config.productionTip = false
 

@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="(aluno, index) in alunos" :key="index" @click="mostrarAluno(aluno)">
-        {{ aluno.nome }} - {{ aluno.sobrenome }} <button type="button" class="btn btn-primary">teste</button>
+        {{ aluno.nome }} - {{ aluno.sobrenome }}
       </li><br/>
     </ul>
     <h2>Hello Sid</h2>
