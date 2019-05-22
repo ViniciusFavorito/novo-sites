@@ -1,22 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div>NavBar</div>
+    <TemplateComponent v-if="useTemplate">
+      <router-view></router-view>
+    </TemplateComponent>
+    <div v-else>
+      <router-view></router-view>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState([ 'useTemplate' ])
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 10px;
-  background-color: #2c3e50;
-}
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
 </style>

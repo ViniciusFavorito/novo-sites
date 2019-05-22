@@ -5,7 +5,11 @@ import store from './store/index'
 import firebase from 'firebase'
 import { firebaseConfig } from './../credentials'
 
+import TemplateComponent from './components/Template'
+
 firebase.initializeApp(firebaseConfig)
+
+Vue.component('TemplateComponent', TemplateComponent)
 
 Vue.config.productionTip = false
 
