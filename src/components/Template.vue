@@ -33,12 +33,17 @@
 
     </nav>
     <slot></slot>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from './Footer'
 export default {
-  name: 'Template'
+  name: 'Template',
+  components: {
+    Footer
+  }
 }
 </script>
 
@@ -49,7 +54,8 @@ export default {
 
   .nav{
     width: 100%;
-    height: 9%;
+    display: flex;
+    flex-direction: column;
     background-color: #07132B;
     color: white;
   }
