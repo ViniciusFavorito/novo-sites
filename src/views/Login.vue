@@ -156,7 +156,7 @@ export default {
 .button-login {
   margin-top: 32px;
   margin-bottom: 32px;
-  background-color: #1F2B50;
+  background-color: #1f2b5f;
   color: white;
   font-size: 26px;
   padding: 16px 64px;
@@ -165,7 +165,7 @@ export default {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 .button-login:active {
-  background-color: #4442b4;
+  background-color: #1f2b5f;
 }
 #social-media-container {
   margin-top: 32px;

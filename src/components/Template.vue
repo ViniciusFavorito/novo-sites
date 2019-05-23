@@ -1,11 +1,15 @@
 <template>
   <div class='divwidth'>
     <nav class='nav'>
-      
+
       <div>
         <img src='../assets/logo-uni.png' class='logo_inst'>
         <button class='botao' style="margin-right:60px;"><a href="http://www.unievangelica.edu.br/vestibular/2019-2/A/regular/">Vestibular</a></button>
-        <button class='botao'>Acesso</button>
+        <button class='botao'>
+          <router-link to="/login">
+            Acesso
+          </router-link>
+        </button>
       </div>
 
       <div class='sec_menu'>
@@ -38,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .divwidth{
     width: 100%;
   }
@@ -52,7 +56,7 @@ export default {
 
   .botao{
   float: right;
-  background-color: #07132B; 
+  background-color: #07132B;
   border: none;
   color: white;
   height: 10px;
@@ -64,7 +68,7 @@ export default {
   margin: 2px 1px;
   cursor: pointer;
   }
-  
+
   .logo_inst{
     height: 35px;
     padding-top: 15px;
@@ -86,18 +90,23 @@ export default {
   }
 
   .botao_menu{
-  float: right;
-  margin-left: 100px;
-  background-color: #1F2B50; 
-  border: none;
-  color: white;
-  height: 10px;
-  padding: 20px;
-  padding-top: 46px;
-  text-align: left;
-  font-size: 19px;
-  margin:4px 2px;
-  cursor: pointer;
+    float: right;
+    margin-left: 100px;
+    background-color: #1F2B50;
+    border: none;
+    color: white;
+    height: 10px;
+    padding: 20px;
+    padding-top: 46px;
+    text-align: left;
+    font-size: 19px;
+    margin:4px 2px;
+    cursor: pointer;
+  }
+
+  .botao > a {
+    text-decoration: none;
+    color: white;
   }
 
 </style>
