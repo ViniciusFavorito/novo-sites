@@ -65,7 +65,7 @@ export default {
   font-size: 16px;
   justify-content: center;
   align-items: center;
-  background-color: #4442A2;
+  background-color: #1F2B50;
   width: 100vw;
   height: 100vh;
 }
@@ -111,7 +111,7 @@ export default {
 .button-login {
   margin-top: 32px;
   margin-bottom: 32px;
-  background-color: #4442A1;
+  background-color: #1F2B50;
   color: white;
   font-size: 32px;
   padding: 16px 64px;
