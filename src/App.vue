@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications group="app" position="top center"></notifications>
     <TemplateComponent v-if="useTemplate">
       <router-view></router-view>
     </TemplateComponent>

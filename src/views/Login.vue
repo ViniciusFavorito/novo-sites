@@ -7,14 +7,15 @@
       </div>
       <div id="input-container" class="flex-column">
         <label>
-          <input type="text" class="input" placeholder="Email">
+          <input v-model="email" type="text" class="input" placeholder="Email">
         </label>
         <label>
-          <input type="password" class="input" placeholder="Senha">
+          <input v-model="password" type="password" class="input" placeholder="Senha">
         </label>
       </div>
-      <div class="button-login">
-        Entrar
+      <div class="button-login" @click="!loading && defaultLogin()">
+        <Loader :loading="loading" color="#FFFFFF" size="31px" margin="2px 20px"></Loader>
+        <span v-if="!loading">Entrar</span>
       </div>
       <div id="social-media-container">
         <div class="sub-title">Cadastre-se ou faça login com suas redes sociais</div>
@@ -30,6 +31,7 @@
 <script>
 import store from '../store'
 import SocialMedia from './../components/SocialMedia'
+import { mapActions } from 'vuex'
 
 export default {
   beforeRouteEnter (to, from, next) {
@@ -39,14 +41,57 @@ export default {
   components: {
     SocialMedia
   },
+  data () {
+    return {
+      loading: false,
+      email: '',
+      password: ''
+    }
+  },
   methods: {
+    ...mapActions('user', ['handleLoginWithEmailAndPassword']),
+    async defaultLogin () {
+      this.loading = true
+      let type = ''
+      let text = ''
+      const { error, success } = await this.handleLoginWithEmailAndPassword({
+        email: this.email,
+        password: this.password
+      })
+      if (error) {
+        type = 'error'
+        text = error.message
+      } else {
+        type = 'success'
+        text = success.message
+      }
+      this.$notify({ group: 'app', type, text })
+      this.loading = false
+    },
     facebookLogin () {
-      console.log('facebook')
+      this.$notify({
+        group: 'app',
+        type: 'error',
+        title: 'Aconteceu um erro!',
+        text: 'A implementação deste método ainda não foi efetuada!'
+      })
     },
     githubLogin () {
+      this.$notify({
+        group: 'app',
+        type: 'error',
+        title: 'Aconteceu um erro!',
+        text: 'A implementação deste método ainda não foi efetuada!'
+      })
       console.log('github')
     },
     googleLogin () {
+      this.$notify({
+        group: 'app',
+        type: 'error',
+        title: 'Aconteceu um erro!',
+        text: 'A implementação deste método ainda não foi efetuada!'
+      })
       console.log('google')
     }
   }
@@ -113,7 +158,7 @@ export default {
   margin-bottom: 32px;
   background-color: #1F2B50;
   color: white;
-  font-size: 32px;
+  font-size: 26px;
   padding: 16px 64px;
   border-radius: 10px;
   cursor: pointer;
