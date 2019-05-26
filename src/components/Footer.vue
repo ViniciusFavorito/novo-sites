@@ -6,21 +6,21 @@
                 <div class="col-4 d-flex align-items-center">
                     <img src="../assets/logo-uni.png" class='logo_inst'>
                 </div>
-                <div class="col-4">
+                <div class="col-4 space">
                     <h4>Navegação</h4>
 
                     <div class="nav-list">
-                        <a class="nav-item" href="#">Sobre o curso</a>
-                        <a class="nav-item" href="#">Mercado de trabalho</a>
-                        <a class="nav-item" href="#">Diferenciais</a>
-                        <a class="nav-item" href="#">Matriz Currícular</a>
-                        <a class="nav-item" href="#">Coordenação</a>
-                        <a class="nav-item" href="#">Corpo Docente</a>
-                        <a class="nav-item" href="#">Notícias</a>
-                        <a class="nav-item" href="#">Eventos Acadêmicos</a>
-                        <a class="nav-item" href="#">Quadro de Vagas</a>
-                        <a class="nav-item" href="#">Comunidade</a>
-                        <a class="nav-item" href="#">Fale Conosco</a>
+                        <a class="nav-item" >Sobre o curso</a>
+                        <a class="nav-item" >Mercado de trabalho</a>
+                        <a class="nav-item" >Diferenciais</a>
+                        <a class="nav-item" >Matriz Currícular</a>
+                        <a class="nav-item" >Coordenação</a>
+                        <a class="nav-item" >Corpo Docente</a>
+                        <a class="nav-item" >Notícias</a>
+                        <a class="nav-item" >Eventos Acadêmicos</a>
+                        <a class="nav-item" >Quadro de Vagas</a>
+                        <a class="nav-item" >Comunidade</a>
+                        <a class="nav-item" >Fale Conosco</a>
                     </div>
                 </div>
                 <div class="col-4">
@@ -45,8 +45,8 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
+            <div class="row" style='border-top: 1px solid #111b3a;'>
+                <div class="footter">
                     <p class="copyright">© Copyright UniEVANGÉLICA 1947 - 2019</p>
                 </div>
             </div>
@@ -69,7 +69,6 @@ export default {
     }
 
     .nav{
-        width: 100%;
         display: flex;
         flex-direction: column;
         background-color: #07132B;
@@ -89,10 +88,13 @@ export default {
 
     .col-4,.col-12{
         position: relative;
-        width: 100%;
         min-height: 1px;
         padding-right: 15px;
-        padding-left: 15px;
+    }
+
+    .space{
+        margin-left: 200px;
+        margin-right: 200px;
     }
 
     .d-flex{
@@ -105,16 +107,12 @@ export default {
         align-items: center !important;
     }
 
-    footer .copyright{
-        text-align: center;
-        margin-top: 15px;
-        padding: 10px 0 0 0;
-        border-top: 1px solid #111b3a;
-    }
+    
 
     footer .copyright {
         font-size: smaller;
-        padding: 30px 0px
+        padding: 30px 0px;
+        margin-left: 520px;
     }
 
     .container {
@@ -126,12 +124,18 @@ export default {
     }
 
     .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        text-align: center
+    }
+
+    .footer{
+        width: 100%;
+        text-align: center
     }
 
 </style>
