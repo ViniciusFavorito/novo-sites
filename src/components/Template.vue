@@ -4,31 +4,31 @@
 
       <div>
         <img src='../assets/logo-uni.png' class='logo_inst'>
-        <button class='botao' style="margin-right:60px;"><a href="http://www.unievangelica.edu.br/vestibular/2019-2/A/regular/">Vestibular</a></button>
-        <button class='botao'>
+        <div class='botao' style="margin-right:60px;"><a href="http://www.unievangelica.edu.br/vestibular/2019-2/A/regular/">Vestibular</a></div>
+        <div class='botao'>
           <router-link to="/login">
             Acesso
           </router-link>
-        </button>
+        </div>
       </div>
 
       <div class='sec_menu'>
         <img src='../assets/logo-eng.png' class='logo_inst_eng'>
-          <button class='botao_menu'  style="margin-right:71px;" >
+          <div class='botao_menu'  style="margin-right:71px;" >
             Fale Conosco
-          </button>
-          <button class='botao_menu'>
+          </div>
+          <div class='botao_menu'>
             Comunidade
-          </button>
-          <button class='botao_menu'>
+          </div>
+          <div class='botao_menu'>
             Galeria
-          </button>
-          <button class='botao_menu'>
-            Notícias
-          </button>
-          <button class='botao_menu'>
+          </div>
+          <div class='botao_menu'>
             Eventos
-          </button>
+          </div>
+          <div class='botao_menu'>
+            Início
+          </div>
       </div>
 
     </nav>
