@@ -10,17 +10,17 @@
                     <h4>Navegação</h4>
 
                     <div class="nav-list">
-                        <a class="nav-item" >Sobre o curso</a>
-                        <a class="nav-item" >Mercado de trabalho</a>
-                        <a class="nav-item" >Diferenciais</a>
-                        <a class="nav-item" >Matriz Currícular</a>
-                        <a class="nav-item" >Coordenação</a>
-                        <a class="nav-item" >Corpo Docente</a>
-                        <a class="nav-item" >Notícias</a>
-                        <a class="nav-item" >Eventos Acadêmicos</a>
-                        <a class="nav-item" >Quadro de Vagas</a>
-                        <a class="nav-item" >Comunidade</a>
-                        <a class="nav-item" >Fale Conosco</a>
+                        <a class=" nav-item" href='http://v2.unievangelica.edu.br/engenharia-de-software/' >Sobre o curso</a>
+                       <!-- <a class=" nav-item" >Mercado de trabalho</a>
+                        <a class=" nav-item" >Matriz Currícular</a>-->
+                        <a class=" nav-item" href='http://periodicos.unievangelica.edu.br/portal/' >Internacionalização</a>
+                        <!--<a class=" nav-item" >Corpo Docente</a>
+                        <a class=" nav-item" >Notícias</a>-->
+                        <a class=" nav-item" href='http://periodicos.unievangelica.edu.br/portal/' >Revista do Curso</a>
+                        <a class=" nav-item" href='http://www.unievangelica.edu.br/unifotos'>UniFotos</a>
+                        <a class=' nav-item' href="http://www.unievangelica.edu.br/vestibular/2019-2/A/regular/">Fale Conosco</a>
+                        <a class=" nav-item" >Comunidade</a><!--Fazer com  fa fa icons-->
+                        
                     </div>
                 </div>
                 <div class="col-4">
@@ -136,6 +136,12 @@ export default {
     .footer{
         width: 100%;
         text-align: center
+    }
+
+    .nav-item{
+        text-decoration: none;
+        color: white;
+        padding:8px;
     }
 
 </style>
