@@ -18,7 +18,11 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState([ 'useTemplate' ])
-  }
+  },
+  name: 'TextFields',
+    data: () => ({
+      textarea: null,
+    })
 }
 </script>
 
