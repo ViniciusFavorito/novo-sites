@@ -21,24 +21,30 @@
             Comunidade
           </div>
           <div class='botao_menu'>
-            Galeria
+            Galeria SITES
           </div>
           <div class='botao_menu'>
-            Eventos
+            <router-link to="/Eventos">
+              Eventos
+            </router-link>
           </div>
           <div class='botao_menu'>
-            Início
+              Inicio
           </div>
       </div>
 
     </nav>
-    <slot></slot>
+    <slot>
+
+
+    </slot>
     <Footer/>
   </div>
 </template>
 
 <script>
 import Footer from './Footer'
+import SocialMedia from './../components/SocialMedia'
 export default {
   name: 'Template',
   components: {
@@ -115,4 +121,10 @@ export default {
     color: white;
   }
 
+  .botao_menu > a{
+    text-decoration: none;
+    color: white;
+  }
+  
 </style>
+  
