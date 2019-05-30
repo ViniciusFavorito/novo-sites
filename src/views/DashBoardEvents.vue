@@ -6,25 +6,57 @@
           Criar/Editar Eventos
         </h1>
       </div>
+      <form id='evento' name='evento'>
       <div id="input-container" class="flex-column">
-        <label>
-          <input v-model="titulo" type="text" class="input" placeholder="Titulo">
-        </label>
+        <md-field>
+          <label>Título do Evento</label>
+          <md-input v-model="type"></md-input>
+        </md-field>
         <md-field>
           <label>Descrição do Evento</label>
           <md-textarea v-model="textarea"></md-textarea>
         </md-field>
       </div>
-      <div class="button-login">
+      <div class="button-login" @click="!loading && defaultLogin()">
         <Loader :loading="loading" color="#FFFFFF" size="31px" margin="2px 20px"></Loader>
         <span v-if="!loading">Gravar</span>
       </div>
+      </form>
     </div>
   </div>
 </template>
 <script>
-export default {
 
+import { mapActions } from 'vuex'
+
+export default {
+    data () {
+    return {
+      loading: false,
+      title: '',
+      event_content: ''
+    }
+  },  methods: {
+    ...mapActions('CreateEvent', ['CreateEvent']),
+    async defaultLogin () {
+      this.loading = true
+      let type = ''
+      let text = ''
+      const { error, success } = await this.CreateEvent({
+        title: this.title,
+        event_content: this.event_content
+      })
+      if (error) {
+        type = 'error'
+        text = error.message
+      } else {
+        type = 'success'
+        text = success.message
+      }
+      this.$notify({ group: 'app', type, text })
+      this.loading = false
+    }
+  }
   }
 </script>
 
@@ -52,9 +84,6 @@ export default {
     background-color: white;
   }
 
-  .title{
-    padding: 50px;
-  }
 
   .input {
   border: 0;
@@ -74,14 +103,14 @@ export default {
 }
 .button-login {
   margin-bottom: 32px;
-  margin-left: 65px;
+  margin-left: 55px;
   background-color: #1f2b5f;
   color: white;
   font-size: 26px;
-  padding: 16px 80px;
+  padding: 10px 30px;
+  text-align: left;
   border-radius: 10px;
   cursor: pointer;
-  width: 210px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 .button-login:active {
