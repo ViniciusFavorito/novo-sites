@@ -10,7 +10,11 @@ export default new Vuex.Store({
     user
   },
   state: {
-    useTemplate: true
+    useTemplate: 'default',
+    dashBoardMenus: [
+      { name: 'Inicio', icon: 'home', route: 'home' },
+      { name: 'Eventos', icon: 'calendar-week', route: 'events' }
+    ]
   },
   mutations: {
     CHANGE_USE_TEMPLATE (state, payload) {

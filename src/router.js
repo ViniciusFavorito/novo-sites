@@ -4,6 +4,9 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Login from './views/Login.vue'
 import Events from './views/Events.vue'
+import DashBoard from './views/DashBoard.vue'
+import DashBoardEvents from './views/DashBoardEvents.vue'
+import DashBoardHome from './views/DashBoardHome.vue'
 
 Vue.use(Router)
 
@@ -29,6 +32,23 @@ export default new Router({
       path: '/events',
       name: 'events',
       component: Events
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashBoard,
+      children: [
+        {
+          path: 'home',
+          name: 'dashboard-home',
+          component: DashBoardHome
+        },
+        {
+          path: 'events',
+          name: 'dashboard-home',
+          component: DashBoardEvents
+        }
+      ]
     }
   ]
 })

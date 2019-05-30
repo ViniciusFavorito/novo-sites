@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <notifications group="app" position="top center"></notifications>
-    <TemplateComponent v-if="useTemplate">
+    <TemplateDefault v-if="useTemplate === 'default'">
       <router-view></router-view>
-    </TemplateComponent>
-    <div v-else>
+    </TemplateDefault>
+    <TemplateDashboard v-if="useTemplate === 'dashboard'">
+      <router-view></router-view>
+    </TemplateDashboard>
+    <div v-if="useTemplate === 'none'">
       <router-view></router-view>
     </div>
   </div>

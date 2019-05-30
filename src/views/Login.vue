@@ -35,7 +35,11 @@ import { mapActions } from 'vuex'
 
 export default {
   beforeRouteEnter (to, from, next) {
-    store.dispatch('changeUseTemplate', false)
+    store.dispatch('changeUseTemplate', 'none')
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    store.dispatch('changeUseTemplate', 'default')
     next()
   },
   components: {
