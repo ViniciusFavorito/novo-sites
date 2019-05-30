@@ -1,22 +1,19 @@
 <template>
-     
-    <div id="container" class="flex-column">
+  <div id="container" class="flex-column">
     <div class="flex-column event-form">
       <div id="title-container" class="flex-column">
         <div id="title">Cronograma SITES XX</div>
       </div>
       <div class="sub-title "> 28/05/2019 - 19h </div>
         <div class='li-event'>
-          <li v-for="i in events" class='li'>maratona</li>
           <li class='li'>maratona</li>
           <li class='li'>maratona</li>
           <li class='li'>maratona</li>
-
+          <li class='li'>maratona</li>
         </div>
       <div class="sub-title "> 29/05/2019 - 19h </div>
         <div class='li-event'>
           <li class='li'>maratona</li>
-        
         </div>
       <div class="sub-title "> 30/05/2019 - 19h </div>
         <div class='li-event'>
@@ -24,23 +21,16 @@
         </div>
       <div class="sub-title "> 31/05/2019 - 19h </div>
         <div class='li-event'>
-          <li class='li'>maratona</li>
-        </div>
-        
-      
-      
+        <li class='li'>maratona</li>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import store from '../store'
-import { mapActions } from 'vuex'
-import Template from './../components/Template'
-import Footer from './../components/Footer'
- 
+export default {
+}
 </script>
-
 
 <style scoped>
 .flex-column {

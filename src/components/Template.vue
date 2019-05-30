@@ -1,7 +1,6 @@
 <template>
   <div class='divwidth'>
     <nav class='nav'>
-
       <div>
         <img src='../assets/logo-uni.png' class='logo_inst'>
         <div class='botao' style="margin-right:60px;"><a href="http://www.unievangelica.edu.br/vestibular/2019-2/A/regular/">Vestibular</a></div>
@@ -11,7 +10,6 @@
           </router-link>
         </div>
       </div>
-
       <div class='sec_menu'>
         <img src='../assets/logo-eng.png' class='logo_inst_eng'>
           <div class='botao_menu'  style="margin-right:71px;" >
@@ -24,7 +22,7 @@
             Galeria SITES
           </div>
           <div class='botao_menu'>
-            <router-link to="/Eventos">
+            <router-link to="/events">
               Eventos
             </router-link>
           </div>
@@ -32,11 +30,8 @@
               Inicio
           </div>
       </div>
-
     </nav>
     <slot>
-
-
     </slot>
     <Footer/>
   </div>
@@ -44,7 +39,6 @@
 
 <script>
 import Footer from './Footer'
-import SocialMedia from './../components/SocialMedia'
 export default {
   name: 'Template',
   components: {
@@ -125,6 +119,5 @@ export default {
     text-decoration: none;
     color: white;
   }
-  
+
 </style>
-  
