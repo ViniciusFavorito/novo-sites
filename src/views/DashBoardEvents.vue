@@ -10,7 +10,7 @@
       <div id="input-container" class="flex-column">
       <label> Selecione a data do Evento</label>
 
-        <date-picker class='' v-model="date" type="datetime" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
+        <date-picker class='' v-model="date" type="date" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
 
         <md-field>
           <label>Título do Evento</label>
@@ -58,11 +58,16 @@ export default {
   },
   methods: {
     submitEvent: async function () {
-      await createEvent({
-        title: this.title,
-        desc: this.desc,
-        date: this.date
-      })
+      if (!this.loading) {
+        const { title, desc, date } = this
+        this.loading = true
+        await createEvent({
+          title,
+          desc,
+          date
+        })
+        this.loading = false
+      }
     }
   }
 }
