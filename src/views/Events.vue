@@ -2,20 +2,15 @@
   <div id="container" class="flex-column">
     <div class="flex-column event-form">
       <div id="title-container" class="flex-column">
-        <div id="title">Cronograma SITES XX</div>
+        <div id="title">Eventos SITES XX</div>
       </div>
       <div id="events">
         <table  v-for="(evento, id) in eventos" :key="id">
           <tbody>
-            <tr>
-              <td> {{ evento.title }} </td>
-            </tr>
+            <ul style="font-size:30px; margin-left:60px;">{{ evento.title }}</ul>
+            <li style='margin-left:150px; font-size:20px; width:auto;'>{{ evento.desc }}</li>
           </tbody>
           <tbody>
-            <tr>
-              <td> {{ evento.date }} </td>
-              <td> {{ evento.desc }}</td>
-            </tr>
           </tbody>
         </table>
       </div>
