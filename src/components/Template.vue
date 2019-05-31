@@ -27,7 +27,9 @@
             </router-link>
           </div>
           <div class='botao_menu'>
+            <router-link to="/">
               Inicio
+            </router-link>
           </div>
       </div>
     </nav>
