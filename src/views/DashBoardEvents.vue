@@ -10,18 +10,18 @@
       <div id="input-container" class="flex-column">
       <label> Selecione a data do Evento</label>
 
-        <date-picker class='' v-model="time2" type="datetime" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
+        <date-picker class='' v-model="date" type="datetime" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
 
         <md-field>
           <label>Título do Evento</label>
-          <md-input v-model="type"></md-input>
+          <md-input v-model="title"></md-input>
         </md-field>
         <md-field>
           <label>Descrição do Evento</label>
-          <md-textarea v-model="textarea"></md-textarea>
+          <md-textarea v-model="desc"></md-textarea>
         </md-field>
       </div>
-      <div class="button-login" @click="!loading && defaultLogin()">
+      <div class="button-login" @click="!loading && submitEvent()">
         <Loader :loading="loading" color="#FFFFFF" size="31px" margin="2px 20px"></Loader>
         <span v-if="!loading">Gravar</span>
       </div>
@@ -32,14 +32,15 @@
 <script>
 
 import DatePicker from 'vue2-datepicker'
+import { createEvent } from '../services/createEvent'
 
 export default {
   components: { DatePicker },
   data () {
     return {
-      time1: '',
-      time2: '',
-      time3: '',
+      title: '',
+      desc: '',
+      date: '',
       loading: false,
       lang: {
         days: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
@@ -53,6 +54,15 @@ export default {
         step: '00:15',
         end: '23:30'
       }
+    }
+  },
+  methods: {
+    submitEvent: async function () {
+      await createEvent({
+        title: this.title,
+        desc: this.desc,
+        date: this.date
+      })
     }
   }
 }

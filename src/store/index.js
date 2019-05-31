@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import App from '../../src/App'
 
 import user from './user'
 import VueMaterial from 'vue-material'

@@ -3,7 +3,7 @@ import firebase from 'firebase'
 export default {
   namespaced: true,
   state: {
-    authenticated: false
+    authenticated: true
   },
   mutations: {
     AUTHENTICATE_USER (state, payload) {
