@@ -4,32 +4,40 @@
       <div id="title-container" class="flex-column">
         <div id="title">Cronograma SITES XX</div>
       </div>
-      <div class="sub-title "> 28/05/2019 - 19h </div>
-        <div class='li-event'>
-          <li class='li'>maratona</li>
-          <li class='li'>maratona</li>
-          <li class='li'>maratona</li>
-          <li class='li'>maratona</li>
-        </div>
-      <div class="sub-title "> 29/05/2019 - 19h </div>
-        <div class='li-event'>
-          <li class='li'>maratona</li>
-        </div>
-      <div class="sub-title "> 30/05/2019 - 19h </div>
-        <div class='li-event'>
-          <li class='li'>maratona</li>
-        </div>
-      <div class="sub-title "> 31/05/2019 - 19h </div>
-        <div class='li-event'>
-        <li class='li'>maratona</li>
+      <div id="events">
+        <table  v-for="(evento, id) in eventos" :key="id">
+          <tbody>
+            <tr>
+              <td> {{ evento.title }} </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td> {{ evento.date }} </td>
+              <td> {{ evento.desc }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-}
+  import { createEvent, listEvent } from '../services/createEvent'
+
+  export default {
+    name:'events',
+    data () {
+      return {
+        eventos: []
+      }
+    },
+    firestore () {
+      eventos: listEvent
+    }
+  }
+  console.log(listEvent)
 </script>
 
 <style scoped>

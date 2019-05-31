@@ -15,11 +15,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      alunos: [
-        { nome: 'sid', sobrenome: 'noiado' },
-        { nome: 'sid2', sobrenome: 'noiado2' },
-        { nome: 'sid3', sobrenome: 'noiado3' },
-      ]
+      alunos: []
     }
   },
   methods: {
