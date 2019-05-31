@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import { createEvent, listEvent } from '../services/createEvent'
+  import { createEvent, listEvents } from '../services/createEvent'
 
   export default {
     name:'events',
@@ -33,11 +33,15 @@
         eventos: []
       }
     },
-    firestore () {
-      eventos: listEvent
+    mounted: function () {
+      this.getEvents()
+    },
+    methods: {
+      getEvents: async function () {
+        this.eventos = await listEvents()
+      }
     }
   }
-  console.log(listEvent)
 </script>
 
 <style scoped>

@@ -1,7 +1,5 @@
 import firebase from 'firebase'
 
-var db = firebase.firestore();
-
 export const createEvent = async ({ title, desc, date }) => {
   try {
     await firebase.firestore().collection('events').add({
@@ -13,11 +11,10 @@ export const createEvent = async ({ title, desc, date }) => {
     console.log('error =>', e)
   }
 }
-export const listEvent = async () => {
-
-  await firebase.firestore().collection('events').get().then(function (querySnapshot) {
-    querySnapshot.forEach(function (doc) {
-      return doc.data
-    })
-  })
+export const listEvents = async () => {
+  console.log('listEvents')
+  const { docs } = await firebase.firestore().collection('events').get()
+  const events = []
+  docs.forEach((doc) =>  events.push(doc.data()))
+  return events
 }
