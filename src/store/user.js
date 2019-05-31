@@ -3,13 +3,15 @@ import firebase from 'firebase'
 export default {
   namespaced: true,
   state: {
-    authenticated: true,
-    name: 'Erick'
+    authenticated: false
   },
   mutations: {
     AUTHENTICATE_USER (state, payload) {
       state.authenticated = payload
     }
+  },
+  getters: {
+    userAuthenticated: (state) => state.authenticated
   },
   actions: {
     userLogoff (context) {

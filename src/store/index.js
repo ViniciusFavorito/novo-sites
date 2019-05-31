@@ -10,8 +10,6 @@ import 'vue-material/dist/theme/default.css'
 Vue.use(Vuex)
 Vue.use(VueMaterial)
 
-
-
 export default new Vuex.Store({
   modules: {
     user

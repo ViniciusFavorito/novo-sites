@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id='container'class='flex-column'>
+    <div id='container' class='flex-column'>
       <div class='title'>
         <h1>
           Criar/Editar Eventos
@@ -10,7 +10,7 @@
       <div id="input-container" class="flex-column">
       <label> Selecione a data do Evento</label>
 
-        <date-picker class='' v-model="time2" type="datetime" :time-picker-options="timePickerOptions"></date-picker>
+        <date-picker class='' v-model="time2" type="datetime" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
 
         <md-field>
           <label>Título do Evento</label>
@@ -31,45 +31,31 @@
 </template>
 <script>
 
-import { mapActions } from 'vuex'
 import DatePicker from 'vue2-datepicker'
 
 export default {
-
-    components: { DatePicker },
-  data() {
+  components: { DatePicker },
+  data () {
     return {
       time1: '',
       time2: '',
       time3: '',
       loading: false,
-      // custom lang
       lang: {
-        days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        pickers: ['next 7 days', 'next 30 days', 'previous 7 days', 'previous 30 days'],
+        days: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        months: ['Jan', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
         placeholder: {
-          date: 'Select Date',
-          dateRange: 'Select Date Range'
+          date: 'Selecione uma Data'
         }
       },
-      // custom range shortcuts
-      shortcuts: [
-        {
-          text: 'Today',
-          onClick: () => {
-            this.time3 = [ new Date(), new Date() ]
-          }
-        }
-      ],
-      timePickerOptions:{
+      timePickerOptions: {
         start: '00:00',
-        step: '00:30',
+        step: '00:15',
         end: '23:30'
       }
     }
   }
-  }
+}
 </script>
 
 <style scoped>
