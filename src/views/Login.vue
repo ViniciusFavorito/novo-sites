@@ -68,6 +68,7 @@ export default {
       } else {
         type = 'success'
         text = success.message
+        this.$router.push('/dashboard')
       }
       this.$notify({ group: 'app', type, text })
       this.loading = false
