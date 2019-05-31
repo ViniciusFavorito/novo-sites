@@ -13,7 +13,9 @@
       <div class='sec_menu'>
         <img src='../assets/logo-eng.png' class='logo_inst_eng'>
           <div class='botao_menu'  style="margin-right:71px;" >
-            Fale Conosco
+            <router-link to="/contact">
+              Fale Conosco
+            </router-link>
           </div>
           <div class='botao_menu'>
             Comunidade
