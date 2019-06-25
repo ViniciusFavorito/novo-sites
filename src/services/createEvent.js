@@ -16,7 +16,10 @@ export const listEvents = async () => {
   console.log('listEvents')
   const { docs } = await firebase.firestore().collection('events').get()
   const events = []
-  docs.forEach((doc) => events.push({...doc.data(), id:doc.id})
+  docs.forEach((doc) => {
+    const data = doc.data()
+    events.push({ ...data, id: doc.id })
+  })
   return events
 }
 
