@@ -16,6 +16,16 @@ export const listEvents = async () => {
   console.log('listEvents')
   const { docs } = await firebase.firestore().collection('events').get()
   const events = []
-  docs.forEach((doc) => events.push(doc.data()))
+  docs.forEach((doc) => events.push({...doc.data(), id:doc.id})
   return events
+}
+
+export const deleteEvent = async ( event ) => {
+  try {
+    await firebase.firestore().collection('events').onDelete({
+      doc
+    })
+  } catch (e) {
+    console.log('error =>', e)
+  }
 }

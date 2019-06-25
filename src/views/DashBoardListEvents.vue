@@ -25,7 +25,9 @@
   </div>
 </template>
 <script>
+
 import { listEvents } from '../services/createEvent'
+import { deleteEvent } from '../services/createEvent'
 
 export default {
   data () {
