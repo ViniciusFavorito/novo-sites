@@ -11,7 +11,7 @@
           <tbody>
             <ul style="font-size:30px; margin-left:60px; margin-top:40px;">{{ event.title }}
               <input @click='delEvent(event)' class='btn' type='button' value="Excluir">
-              <input class='btn' type='button' value="Editar">
+              <router-link :to="`/dashboard/events/edit/${event.id}`"  class='btn'>Editar</router-link>
               <br>
               <br>
               </ul>
