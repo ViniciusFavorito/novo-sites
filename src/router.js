@@ -7,6 +7,8 @@ import Events from './views/Events.vue'
 import Contact from './views/Contact.vue'
 import DashBoard from './views/DashBoard.vue'
 import DashBoardEvents from './views/DashBoardEvents.vue'
+import DashBoardCreateEvents from './views/DashBoardCreateEvents.vue'
+import DashBoardListEvents from './views/DashBoardListEvents.vue'
 import DashBoardHome from './views/DashBoardHome.vue'
 
 Vue.use(Router)
@@ -52,7 +54,19 @@ export default new Router({
         {
           path: 'events',
           name: 'dashboard-home',
-          component: DashBoardEvents
+          component: DashBoardEvents,
+          children: [
+            {
+              path: '/',
+              name: 'dashboard-events-list',
+              component: DashBoardListEvents
+            },
+            {
+              path: 'create',
+              name: 'dashboard-events-create',
+              component: DashBoardCreateEvents
+            }
+          ]
         }
       ]
     }
