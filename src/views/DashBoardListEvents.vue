@@ -1,10 +1,25 @@
 <template>
   <div>
     <div id='container' class='flex-column'>
-      <div class='title'>
+      <div class='title' >
         <h1>
           Eventos
         </h1>
+
+        <div id="events" style="margin-top:70px;">
+        <table style="width:100%;" class='table'v-for="(events, id) in events" :key="id">
+          <tbody>
+            <ul style="font-size:30px; margin-left:60px; margin-top:40px;">{{ events.title }}
+              <input class='btn' type='button' value="Excluir">
+              <input class='btn' type='button' value="Editar">
+              <br>
+              <br>
+              </ul>
+            <p style='margin-left:150px; font-size:20px; width:auto; margin-botton: 100px;'>{{ events.desc }}</p>
+            </br>
+          </tbody>
+        </table>
+      </div>
       </div>
     </div>
   </div>
@@ -43,6 +58,21 @@ export default {
   font-size: 16px;
   justify-content: center;
   background-color: white;
+}
+
+.table{
+  border-bottom: 6px solid #1F2B50;
+  background-color: white;
+}
+
+.btn{
+  float: right;
+  margin-left:50px;
+  height: 45px;
+  width: 70px;
+  background-color: white;
+  border-width: #1F2B50;
+  border-style: #1F2B50;
 }
 
 </style>
