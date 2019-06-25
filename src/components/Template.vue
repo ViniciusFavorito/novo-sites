@@ -17,9 +17,6 @@
               Fale Conosco
             </router-link>
           </div>
-          <!-- <div class='botao_menu'> -->
-            <!-- Comunidade -->
-          <!-- </div> -->
           <div class='botao_menu'>
             Galeria SITES
           </div>

@@ -5,12 +5,16 @@
         <h1>
           Eventos
         </h1>
-
-        <div id="events" style="margin-top:70px;">
+        </div>
+        <div class='btn-criar'>
+        <router-link :to="`/dashboard/events/create`" >Novo Evento </router-link> 
+        </div>
+      <div>
+        <div id="events" style="margin-top:30px;">
         <table style="width:100%;" class='table'v-for="(event, id) in events" :key="id">
           <tbody>
             <ul style="font-size:30px; margin-left:60px; margin-top:40px;">{{ event.title }}
-              <input @click='delEvent(event)' class='btn' type='button' value="Excluir">
+              <a @click='delEvent(event)' class='btn' >Excluir</a>
               <router-link :to="`/dashboard/events/edit/${event.id}`"  class='btn'>Editar</router-link>
               <br>
               <br>
@@ -74,11 +78,25 @@ export default {
 .btn{
   float: right;
   margin-left:50px;
-  height: 45px;
+  /* height: 45px; */
   width: 70px;
   background-color: white;
-  border-width: #1F2B50;
-  border-style: #1F2B50;
+  border-width: none;
+  border-style: none;
+  text-decoration: none;
+  font-size:20px; 
+}
+
+.btn-criar{
+  float:right;
+  font-size:20px; 
+  /* margin-left:90px; */
+  margin-top: 50px;
+  height: 45px;
+  width: 300px;
+  background-color: white;
+  cursor: pointer;
+
 }
 
 </style>
