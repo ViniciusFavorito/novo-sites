@@ -1,6 +1,6 @@
 <template>
   <div>
-    DashBoard Home
+    Rotina ainda em Desenvolvimento
   </div>
 </template>
 <script>

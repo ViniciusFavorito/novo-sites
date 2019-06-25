@@ -64,7 +64,7 @@ export default {
 <style scoped>
 
     .divwidth{
-        width: 100%;
+        width:  auto;
         background-color: #07132b;
     }
 
@@ -73,6 +73,7 @@ export default {
         flex-direction: column;
         background-color: #07132B;
         color: white;
+        width: auto;
     }
 
     .logo_inst{

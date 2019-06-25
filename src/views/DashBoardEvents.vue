@@ -8,10 +8,8 @@
       </div>
       <form id='evento' name='evento'>
       <div id="input-container" class="flex-column">
-      <label> Selecione a data do Evento</label>
-
-        <date-picker class='' v-model="date" type="date" :lang="lang" :time-picker-options="timePickerOptions"></date-picker>
-
+      <!-- <label> Selecione a data do Evento</label> -->
+        <!-- <date-picker class='' v-model="date" type="date" :lang="lang" :time-picker-options="timePickerOptions"></date-picker> -->
         <md-field>
           <label>Título do Evento</label>
           <md-input v-model="title"></md-input>

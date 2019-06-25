@@ -8,7 +8,7 @@
         <table  v-for="(evento, id) in eventos" :key="id">
           <tbody>
             <ul style="font-size:30px; margin-left:60px;">{{ evento.title }}</ul>
-            <li style='margin-left:150px; font-size:20px; width:auto;'>{{ evento.desc }}</li>
+            <p style='margin-left:150px; font-size:20px; width:auto; margin-botton: 100px;'>{{ evento.desc }}</p>
           </tbody>
           <tbody>
           </tbody>
@@ -52,7 +52,7 @@
   justify-content: left;
   align-items: left;
   background-color: white;
-  width: 100vw;
+  width: auto;
   height: 100vh;
 }
 
