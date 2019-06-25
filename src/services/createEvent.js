@@ -36,18 +36,19 @@ export const listEvent = async ( id ) => {
   try {
     const event = await firebase.firestore().collection('events').doc(id).get()
     console.log(event)
-    const data = event.data()  
+    const data = event.data()
     return {...data, id:event.id}
   }catch (e) {
     console.log('error =>', e)
   }
 }
 
-export const editEvent = async ( event ) => {
-  try { console.log(event)
-    const event = await firebase.firestore().collection('events').doc(event.id)
-    event.update(event)
-  }catch (e) {
+export const editEvent = async ({ title, desc, date, id }) => {
+  try {
+    console.log(title, desc, date, id)
+    const event = await firebase.firestore().collection('events').doc(id)
+    await event.update({ title, desc, date })
+  } catch (e) {
     console.log('error =>', e)
   }
 }

@@ -39,18 +39,18 @@ export default {
   data () {
     return {
       event: {},
-      loading:false
+      loading: false
     }
   },
-  mounted() {
+  mounted () {
     this.getEvent()
   },
   methods: {
     submitEvent: async function () {
       if (!this.loading) {
-        console.log(this.event)
         this.loading = true
-        await editEvent({...this.event})
+        const { id, desc, date, title } = this.event
+        await editEvent({ id, desc, date, title })
         this.loading = false
       }
     },
