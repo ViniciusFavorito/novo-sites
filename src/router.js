@@ -10,6 +10,7 @@ import DashBoardEvents from './views/DashBoardEvents.vue'
 import DashBoardCreateEvents from './views/DashBoardCreateEvents.vue'
 import DashBoardListEvents from './views/DashBoardListEvents.vue'
 import DashBoardHome from './views/DashBoardHome.vue'
+import DashBoardEditEvents from './views/DashBoardEditEvents.vue'
 
 Vue.use(Router)
 
@@ -65,6 +66,11 @@ export default new Router({
               path: 'create',
               name: 'dashboard-events-create',
               component: DashBoardCreateEvents
+            },
+            {
+              path: 'edit/:id',
+              name: 'dashboard-events-edit',
+              component: DashBoardEditEvents
             }
           ]
         }

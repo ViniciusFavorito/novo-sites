@@ -23,12 +23,31 @@ export const listEvents = async () => {
   return events
 }
 
-export const deleteEvent = async ( event ) => {
+export const deleteEvent = async ({ id }) => {
   try {
-    await firebase.firestore().collection('events').onDelete({
-      doc
-    })
-  } catch (e) {
+    const event = await firebase.firestore().collection('events').doc(id)
+    event.delete()
+  }catch (e) {
+    console.log('error =>', e)
+  }
+}
+
+export const listEvent = async ( id ) => {
+  try {
+    const event = await firebase.firestore().collection('events').doc(id).get()
+    console.log(event)
+    const data = event.data()  
+    return {...data, id:event.id}
+  }catch (e) {
+    console.log('error =>', e)
+  }
+}
+
+export const editEvent = async ( event ) => {
+  try { console.log(event)
+    const event = await firebase.firestore().collection('events').doc(event.id)
+    event.update(event)
+  }catch (e) {
     console.log('error =>', e)
   }
 }

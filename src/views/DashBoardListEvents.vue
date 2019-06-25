@@ -7,15 +7,15 @@
         </h1>
 
         <div id="events" style="margin-top:70px;">
-        <table style="width:100%;" class='table'v-for="(events, id) in events" :key="id">
+        <table style="width:100%;" class='table'v-for="(event, id) in events" :key="id">
           <tbody>
-            <ul style="font-size:30px; margin-left:60px; margin-top:40px;">{{ events.title }}
-              <input class='btn' type='button' value="Excluir">
+            <ul style="font-size:30px; margin-left:60px; margin-top:40px;">{{ event.title }}
+              <input @click='delEvent(event)' class='btn' type='button' value="Excluir">
               <input class='btn' type='button' value="Editar">
               <br>
               <br>
               </ul>
-            <p style='margin-left:150px; font-size:20px; width:auto; margin-botton: 100px;'>{{ events.desc }}</p>
+            <p style='margin-left:150px; font-size:20px; width:auto; margin-botton: 100px;'>{{ event.desc }}</p>
             </br>
           </tbody>
         </table>
@@ -37,6 +37,10 @@ export default {
   },
   methods: {
     getEvents: async function () {
+      this.events = await listEvents()
+    },
+    delEvent: async function (event) {
+      await deleteEvent(event)
       this.events = await listEvents()
     }
   },
